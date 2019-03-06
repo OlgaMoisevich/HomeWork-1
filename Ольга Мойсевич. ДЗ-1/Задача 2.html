@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Задача№2</title>
+</head>
+<body>
+	<script>
+		function showNoRepetNumber(arr){
+
+			let arrSort = arr.sort();
+			
+		for(let i=0; i<arrSort.length; i++){
+
+			if(arrSort[i]==arrSort[i+1]){
+
+				arrSort.splice((i+1), 1);
+				i--;
+			}
+		}
+		console.log(arrSort);
+		return arrSort;
+		}
+		showNoRepetNumber([7, 8, 9, 7, 5, 9, 16, 8, 9, 15, 12, 3]);
+
+	</script>	
+</body>
+</html>

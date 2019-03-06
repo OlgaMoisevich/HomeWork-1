@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Задача№3</title>
+</head>
+<body>
+	<script>
+		function splitString(str){
+
+			let newStr = str.split('\n');
+			let value = '';
+			
+			for(let i=0; i<newStr.length; i++){
+
+				if(i==0){
+					value ='<h1>' + newStr[i] + '</h1>';  
+					}else {
+						value +='<p>'+ newStr[i] +'</p>' ;
+				}
+
+			}
+			console.log(value);
+			return value;
+		}		
+
+		splitString('разбить строчку на\nзаголовок\nи параграфы')
+		
+	</script>
+</body>
+</html>

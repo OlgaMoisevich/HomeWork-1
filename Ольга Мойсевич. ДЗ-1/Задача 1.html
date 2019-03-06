@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Д.з №1</title>
+</head>
+<body>
+	<script>
+		function makeSvgPoints(arr1){
+			let str = '';
+
+			for(let i=0; i<arr1.length; i++){
+
+				if(arr1[i].x && arr1[i].y){
+					str+=(arr1[i].x).toString()+' ' + (arr1[i].y).toString() +',';
+				}else if(arr1[i].x &&(!(arr1[i].y))){
+					str+=(arr1[i].x).toString()+','
+				}else {
+					str+=(arr1[i].y).toString()+','
+				}
+			}
+
+			let str1 = str.slice(0, -1);
+
+			console.log(str1);
+			return str1;
+		}
+
+		makeSvgPoints([{x:5},{x:12, y:13}, {x:56, y:45}, {y:7}]); 
+	</script>
+</body>
+</html>
