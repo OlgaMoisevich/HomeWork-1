@@ -6,23 +6,45 @@
 </head>
 <body>
 	<script>
-		function showNoRepetNumber(arr){
+				// 1-й способ, если оставлять 1-но повторяющееся число
 
-			let arrSort = arr.sort();
+		// function showNoRepetNumber(arr){
+
+		// 	let arrSort = arr.sort();
 			
-		for(let i=0; i<arrSort.length; i++){
+		// for(let i=0; i<arrSort.length; i++){
 
-			if(arrSort[i]==arrSort[i+1]){
+		// 	if(arrSort[i]==arrSort[i+1]){
 
-				arrSort.splice((i+1), 1);
-				i--;
+		// 		arrSort.splice((i+1), 1);
+		// 		i--;
+		// 	}
+		// }
+		// console.log(arrSort);
+		// return arrSort;
+		// }
+		// showNoRepetNumber([7, 8, 9, 7, 5, 9, 16, 8, 9, 15, 12, 3]);
+
+				// 2-й способ, удалять все повторяющиеся числа
+
+			function showNoRepetNumber(arr){
+
+				let obj = {};
+				for(let i=0; i<arr.length; i++){
+					let str = arr[i];
+					obj[str] = true;
+				}
+				let strArr = Object.keys(obj);
+				let numArr = [];
+
+				strArr.forEach( function(element) {
+					numArr.push(parseInt(element));
+				});
+
+				return console.log(numArr);
+
 			}
-		}
-		console.log(arrSort);
-		return arrSort;
-		}
-		showNoRepetNumber([7, 8, 9, 7, 5, 9, 16, 8, 9, 15, 12, 3]);
-
+			showNoRepetNumber([7, 8, 9, 7, 5, 9, 16, 8, 9, 15, 12, 3]);	
 	</script>	
 </body>
 </html>
