@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Д.з№2</title>
+</head>
+<body>
+	<style>
+		:root {
+		font-family: sans-serif;
+	}
+	.tags-input {
+		cursor: text;
+		border: 1px solid #777;
+		border-radius: .25rem;
+		background-color: #fff;
+		padding: 5px 10px 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: center;
+		position: relative;
+		font-size: 14px;
+	}
+	.tag {
+		user-select: none;
+		background-color: #eee;
+		color: #888;
+		display: inline-flex;
+		margin: 0 10px 5px 0;
+		border-radius: .25rem;
+		padding: 2.5px 5px;
+		cursor: pointer;
+		opacity: 1;
+		transition: all .25s ease-in-out;
+	}
+	.tag:hover {
+		opacity: .5;
+		background-color: #48e;
+		color: #fff;
+	}
+	.tag:active {
+		opacity: .75;
+		background-color: #ee2e4e;
+		color: #fff;
+	}
+	.tags-input input {
+		-webkit-appearance: none;
+				appearance: none;
+		border: none;
+		display: inline-flex;
+		flex: 1;
+		background-color: transparent;
+		padding: 7px 10px;
+		margin: -5px -10px 0 -10px;
+		font-size: inherit;
+		width: auto;
+		min-width: 50px;
+	}
+	.tags-input input:focus {
+		outline: none;
+	}
+	</style>
+	<script src="JS№2.js"></script>
+</body>
+</html>
