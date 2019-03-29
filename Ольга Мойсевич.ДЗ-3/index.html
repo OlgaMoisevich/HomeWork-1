@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Д.з № 3</title>
+</head>
+<body>
+	
+	<script>
+		class Validation {
+			
+		  constructor(listCritery) {
+		  	
+		  	this.list = [];		  	
+		   	 for(let i=0 ; i<listCritery.length; i++){
+		   	 		let initCounter=0;	
+		   	 		this.list.push({name:listCritery[i].name,
+		   							check:listCritery[i].check,
+		   							message:listCritery[i].message,	
+		   							cntState: initCounter })
+		 						 }
+		 					 
+		 	 	}				 
+		  
+		  toggleValidator(name, state){
+		  		for(let i=0; i<this.list.length; i++){
+		  			if(this.list[i].name==name){
+		  				if(arguments.length==1){
+		  					this.list[i].cntState++ ;
+		  					if(this.list[i].cntState %2 ==0){
+		  						this.list[i].check = true;
+		  					}else {
+		  						 this.list[i].check = false;
+		  					}
+		  				}else{
+                			this.list[i].check = state; 
+                			this.list[i].cntState = 0;
+           				 }
+		  			}
+
+		  		}
+		   }
+
+		  validate(value){
+		  	let map = new Map();
+
+    		for(let i=0 ; i<this.list.length; ++i){
+        		let errStr =  (this.list[i].check == value) ? "Validate-Okay!" : "validate-Error!";
+        		map.set(this.list[i].name, errStr)
+    			}
+    			return map;
+			}  		
+		}
+
+		let val = new Validation([{name: 'required', check: function(){}, message: function(){}}]);
+		val.toggleValidator( 'required');
+		val.toggleValidator( 'required',  false);
+		val.toggleValidator( 'required',  true);
+		val.validate(false);
+		val.validate(true);
+	</script>
+</body>
+</html>
