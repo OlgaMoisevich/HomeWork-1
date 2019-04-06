@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HW4</title>
+</head>
+<body>
+	<script>
+		function* (id){
+			yield fetchUser(id).
+					then(result=>{result},
+						err => generator.throw(err));
+		    yield fetchFriends(id).
+		    		then(result=>{result},
+						err => generator.throw(err));
+		}
+		
+		let arr = [];
+		
+		function _async(generator){
+			let next = generator.next();
+				if(!next.done){
+					arr.push(next);
+					_async(generator);
+				}
+			return iteratorRez(arr);
+		}
+
+		function iteratorRez(user){
+
+			let arr1 = [];
+			for (let i=0; i<user.length; i++){
+			arr1.push(user[i].value);
+			}
+			return {...arr1};
+		}
+
+		let fetchData = _async(function* (id));
+
+	</script>
+</body>
+</html>
